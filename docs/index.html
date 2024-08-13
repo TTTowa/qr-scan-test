@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRコードリーダー</title>
+    <style>
+        /* 見えなくする */
+        #qr-input {
+            display: none;
+        }
+
+        /* カスタムボタン */
+        #qr-input-label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #qr-result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: green;
+        }
+
+        #qr-canvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>QRコードリーダー</h1>
+    <label for="qr-input" id="qr-input-label">QRコードを選択</label>
+    <input type="file" accept="image/*" capture="environment" id="qr-input">
+    <div id="qr-result">QRコードの結果がここに表示されます</div>
+    <canvas id="qr-canvas"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+    <script src="qr-reader.js"></script>
+</body>
+</html>
